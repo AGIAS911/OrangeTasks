@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your trip to Japan. Fill out our comprehensive travel reservation form.">
+    <title>Booking </title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='rgb(255, 212, 59)'><path d='M48 64h416v48H48zM96 160h320v48H96zM128 64v416h48V64zM336 64v416h48V64zM232 112v48h48v-48z'/></svg>"></head>
+
+</head>
+<body>
+
+    <header>
+        <h1>Book Your Japan Adventure</h1>
+        <nav>
+            <p><a href="index.html">← Back to Main Page</a></p>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Form structure -->
+        <form action="/submit_booking" target="_blank" autocomplete="on">
+            
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" size="40" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Account Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="+1234567890" required><br><br>
+
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob" required><br><br>
+            </fieldset>
+
+            <br>
+
+            <!-- Travel Details & Selection Controls -->
+            <fieldset>
+                <legend>Travel Details</legend>
+
+                <label for="departure">Departure City:</label><br>
+                <input type="text" id="departure" name="departure" required><br><br>
+
+                <label for="destination">Destination:</label><br>
+                <select id="destination" name="destination" required>
+                    <option value="">-- Select a Destination --</option>
+                    <optgroup label="Asia">
+                        <option value="tokyo" selected>Tokyo, Japan</option>
+                        <option value="kyoto">Kyoto, Japan</option>
+                        <option value="osaka">Osaka, Japan</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="paris">Paris, France</option>
+                        <option value="london">London, UK</option>
+                    </optgroup>
+                </select><br><br>
+
+                <label for="traveldate">Travel Date:</label><br>
+                <input type="date" id="traveldate" name="traveldate" required><br><br>
+
+                <label for="travelers">Number of Travelers:</label><br>
+                <input type="number" id="travelers" name="travelers" min="1" max="10" value="1" required><br><br>
+
+                <label>Travel Class:</label><br>
+                <input type="radio" id="economy" name="class" value="Economy" required>
+                <label for="economy">Economy</label><br>
+                <input type="radio" id="business" name="class" value="Business">
+                <label for="business">Business</label><br>
+                <input type="radio" id="firstclass" name="class" value="First Class">
+                <label for="firstclass">First Class</label><br><br>
+
+                <label>Additional Services:</label><br>
+                <input type="checkbox" id="transfer" name="services" value="Airport Transfer">
+                <label for="transfer">Airport Transfer (Narita/Haneda)</label><br>
+                <input type="checkbox" id="hotel" name="services" value="Hotel Reservation">
+                <label for="hotel">Hotel Reservation (Ryokan option)</label><br>
+                <input type="checkbox" id="insurance" name="services" value="Travel Insurance">
+                <label for="insurance">Travel Insurance</label><br>
+                <input type="checkbox" id="guided" name="services" value="Guided Tour">
+                <label for="guided">Guided Tour</label><br><br>
+            </fieldset>
+
+            <br>
+
+            <!-- Advanced Form Features -->
+            <fieldset>
+                <legend>Advanced Options & Requests</legend>
+
+                <!-- Datalist -->
+                <label for="package">Preferred Package:</label><br>
+                <input list="packages" id="package" name="package" placeholder="Type to search packages">
+                <datalist id="packages">
+                    <option value="Tokyo City Tech Tour">
+                    <option value="Kyoto Heritage Walk">
+                    <option value="Mount Fuji Expedition">
+                    <option value="VIP Shinkansen Pass">
+                </datalist><br><br>
+
+                <!-- Textarea -->
+                <label for="requests">Special Requests:</label><br>
+                <textarea id="requests" name="requests" rows="4" cols="50" maxlength="200" placeholder="Let us know if you have any dietary restrictions (e.g., Halal, Vegetarian) or special needs..."></textarea><br><br>
+
+                <!-- File upload (Multiple & Required) -->
+                <label for="documents">Upload Passports (Multiple allowed):</label><br>
+                <input type="file" id="documents" name="documents" multiple required><br><br>
+
+                <!-- Disabled and Readonly attributes -->
+                <label for="promocode">Promotional Discount:</label><br>
+                <input type="text" id="promocode" name="promocode" value="JAPAN2026" disabled><br><br>
+
+                <label for="bookingref">Booking Reference:</label><br>
+                <input type="text" id="bookingref" name="bookingref" value="JPN-98765-REF" readonly><br><br>
+            </fieldset>
+
+            <br>
+
+            <!-- Action Buttons -->
+            <input type="submit" value="Submit Reservation">
+            <input type="reset" value="Clear Form">
+
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2026 Japan Travel Booking Site. Anas Ghassan.</p>
+    </footer>
+
+</body>
+</html>

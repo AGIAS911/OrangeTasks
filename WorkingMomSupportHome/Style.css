@@ -124,16 +124,7 @@ body {
     text-decoration: none;
     margin: 0 10px;
 }
-
-/* 8. تصميم الهاتف (شاشات صغيرة) */
-@media (max-width: 768px) {
-    .site-header, 
-    .hero-section, 
-    .cards-wrapper {
-        flex-direction: column; /* ترتيب العناصر فوق بعضها بدلاً من جنب بعضها */
-        text-align: center;
-    }
-    
+   
     .main-nav ul {
         margin-top: 15px;
         justify-content: center;
@@ -143,7 +134,7 @@ body {
         padding-right: 0;
         margin-bottom: 20px;
     }
-}
+
 
 .svg{
     width: 100px;

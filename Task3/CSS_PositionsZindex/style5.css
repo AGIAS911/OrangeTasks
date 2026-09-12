@@ -1,0 +1,54 @@
+body {
+    margin: 100px;
+}
+
+.container {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+}
+
+.red-box {
+    border: 2px solid red;
+    top: 0;
+    left: 24px;
+    z-index: 1;
+}
+
+.orange-box {
+    border: 2px solid orange;
+    top: 6px;
+    left: 18px;
+    z-index: 2;
+}
+
+.yellow-box {
+    border: 2px solid gold;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+}
+
+.green-box {
+    border: 2px solid green;
+    top: 18px;
+    left: 6px;
+    z-index: 4;
+}
+
+.blue-box {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-family: serif;
+    top: 24px;
+    left: 0;
+    z-index: 5;
+}

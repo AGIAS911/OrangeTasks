@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+.div1, .div2, .div3, .div4 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+
+.div1 {
+    background-color: #e44258;
+    top: 0;
+    left: 0;
+}
+
+.div2 {
+    background-color: #47a8cb;
+    top: 0;
+    right: 0;
+}
+
+.div3 {
+    background-color: #a7d142;
+    bottom: 0;
+    left: 0;
+}
+
+.div4 {
+    background-color: #e4d74c;
+    bottom: 0;
+    right: 0;
+}

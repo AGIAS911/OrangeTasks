@@ -1,0 +1,38 @@
+body {
+    margin: 50px;
+}
+
+.container {
+    position: relative;
+}
+
+img {
+    position: absolute;
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.img1 {
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.img2 {
+    top: 20px;
+    left: 40px;
+    z-index: 3;
+}
+
+.img3 {
+    top: 40px;
+    left: 80px;
+    z-index: 2;
+}
+
+.img4 {
+    top: 60px;
+    left: 120px;
+    z-index: 1;
+}

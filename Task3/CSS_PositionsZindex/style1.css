@@ -1,0 +1,31 @@
+.div1 {
+    position: relative;
+    border: 1px solid black;
+    width: 90%;
+    height: 150px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.div2 {
+    position: fixed;
+    top: 180px;
+    left: 50px;
+    background-color: blue;
+    color: white;
+    width: 600px;
+    height: 70px;
+    padding: 10px;
+
+    z-index: 10;
+}
+
+.div3 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background-color: lightgreen;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+}

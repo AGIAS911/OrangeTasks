@@ -1,0 +1,37 @@
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.b1 {
+    border-style: solid;
+}
+
+.b2 {
+    border-style: solid dashed dotted double;
+}
+
+.b3 {
+    border-width: 2px;
+    border-style: dashed;
+    border-color: black;
+}
+
+.b4 {
+    border-style: solid;
+}
+
+.b5 {
+    border: 2px solid blue;
+}
+
+.b6 {
+    border: 2px solid green;
+    border-bottom: 2px dotted green;
+}

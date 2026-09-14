@@ -15,16 +15,24 @@ the best thing about variables, is it becomes very easy to change everything at 
 
 :root {
   /* Color Systme */
-  --primary: #6c5ce7; /*Branding main color*/
-  --secondary: #00cec9; /*Branding secondary color*/
-  --accent: #fd79a8; /*accent color is used for calls to action*/
-  --dark: #0d0d1a; /* Page background */
-  --light: #f4f4f8; /*Text on dark background */
+  --primary: #6c5ce7;
+  /*Branding main color*/
+  --secondary: #00cec9;
+  /*Branding secondary color*/
+  --accent: #fd79a8;
+  /*accent color is used for calls to action*/
+  --dark: #0d0d1a;
+  /* Page background */
+  --light: #f4f4f8;
+  /*Text on dark background */
 
   /* Spacing scale for padding. One source of truth means every gap on the site follows the same rythem. */
-  --p-1: 8px; /*the variable name p-1 */
-  --p-2: 16px; /*the variable name p-2 */
-  --p-3: 32px; /*the variable name p-3 */
+  --p-1: 8px;
+  /*the variable name p-1 */
+  --p-2: 16px;
+  /*the variable name p-2 */
+  --p-3: 32px;
+  /*the variable name p-3 */
 
   /* Spacing scale for margin */
   --m-1: 8px;
@@ -41,15 +49,11 @@ body {
 }
 
 h2 {
-  text-align: center;
   font-size: 30px;
   color: var(--secondary);
-  margin-bottom: var(--m-3);
 }
 
-section {
-  padding: var(--p-3);
-} /*Consistent section padding for all sections in the website */
+/*Consistent section padding for all sections in the website */
 
 /* Header */
 .site-header {
@@ -72,11 +76,12 @@ section {
 /* button */
 .custom-btn {
   background-color: var(--accent);
-    color: white;
+  color: white;
 }
 
 .custom-btn:hover {
-  transform: scale(1.05); /* grows slightly on hover */
+  transform: scale(1.05);
+  /* grows slightly on hover */
 }
 
 /* ANIMATION with @keyframes */
@@ -88,9 +93,11 @@ We then attach it to an element with the animation property */
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-25px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -102,6 +109,7 @@ We then attach it to an element with the animation property */
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -113,6 +121,7 @@ We then attach it to an element with the animation property */
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -121,7 +130,7 @@ We then attach it to an element with the animation property */
 /* HERO section */
 .hero {
   position: relative;
-  
+
   padding: 100px var(--p-3);
   overflow: hidden;
   background: radial-gradient(circle at top, #1a1a3a, var(--dark));
@@ -137,7 +146,8 @@ We then attach it to an element with the animation property */
   background: var(--primary);
   filter: blur(4px);
   opacity: 0.6;
-  animation: float 4s ease-in-out infinite; /*infinite means runs forever*/
+  animation: float 4s ease-in-out infinite;
+  /*infinite means runs forever*/
 }
 
 /* The text fades up once when the page loads */
@@ -146,6 +156,7 @@ We then attach it to an element with the animation property */
   z-index: 2;
   animation: fadeInUp 1s ease both;
 }
+
 .hero-content h1 {
   font-size: 42px;
   margin-bottom: var(--m-2);
@@ -177,8 +188,6 @@ the repeat() + minmax() combo below makes it responsive without using media quer
   background-color: rgba(42, 39, 39, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: var(--p-3);
-  text-align: center;
   transition:
     transform 0.25s,
     border-color 0.25s;
@@ -190,10 +199,7 @@ the repeat() + minmax() combo below makes it responsive without using media quer
   cursor: pointer;
 }
 
-.planet-card h3 {
-  color: var(--secondary);
-  margin: var(--m-2) 0 var(--m-1);
-}
+
 
 .planet-card p {
   color: #b8b8d0;
@@ -214,18 +220,23 @@ the repeat() + minmax() combo below makes it responsive without using media quer
 .mercury {
   background: radial-gradient(circle at 30% 30%, #b0b0b0, #6b6b6b);
 }
+
 .venus {
   background: radial-gradient(circle at 30% 30%, #e8c07d, #a5762f);
 }
+
 .earth {
   background: radial-gradient(circle at 30% 30%, #6ab7ff, #1e6b3a);
 }
+
 .mars {
   background: radial-gradient(circle at 30% 30%, #ff8c66, #6b6b6b);
 }
+
 .jupiter {
   background: radial-gradient(circle at 30% 30%, #e0b088, #9c6b3f);
 }
+
 .saturn {
   background: radial-gradient(circle at 30% 30%, #f0d9a0, #b89b5e);
 }
@@ -247,8 +258,10 @@ grid-auto-rows sets a base height for every row.
 .bento-item {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  display: grid; /* grid also can be used to center content */
-  place-items: center; /* one line to center both axes */
+  display: grid;
+  /* grid also can be used to center content */
+  place-items: center;
+  /* one line to center both axes */
   padding: var(--p-2);
   font-weight: 600;
   color: var(--secondary);
@@ -279,15 +292,7 @@ grid-auto-rows sets a base height for every row.
   grid-column: 3/5;
 }
 
-/* STATS, a clean even grid */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /*four equal columns */
-  gap: var(--p-2);
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
+
 
 .stat {
   background-color: rgba(255, 255, 255, 0.05);

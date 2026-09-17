@@ -1,326 +1,475 @@
-/* SPACE EXPLORER, style.css */
-/* This session: CSS GRid, animations, and variables */
-
-/* Global Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* CSS VARIABLES (custome properties) */
-/* Declared once inside :root (the top of the document) and reused everywhere with var().
-change a value here and it update across the WHOLE site. This is how we keep colors and spacing consistent
-the best thing about variables, is it becomes very easy to change everything at once without having to go over every where it exist */
-
-:root {
-  /* Color Systme */
-  --primary: #6c5ce7;
-  /*Branding main color*/
-  --secondary: #00cec9;
-  /*Branding secondary color*/
-  --accent: #fd79a8;
-  /*accent color is used for calls to action*/
-  --dark: #0d0d1a;
-  /* Page background */
-  --light: #f4f4f8;
-  /*Text on dark background */
-
-  /* Spacing scale for padding. One source of truth means every gap on the site follows the same rythem. */
-  --p-1: 8px;
-  /*the variable name p-1 */
-  --p-2: 16px;
-  /*the variable name p-2 */
-  --p-3: 32px;
-  /*the variable name p-3 */
-
-  /* Spacing scale for margin */
-  --m-1: 8px;
-  --m-2: 16px;
-  --m-3: 32px;
-}
-
-/* BASE */
 body {
-  font-family: "Segoe UI", arial, sans-serif;
-  background-color: var(--dark);
-  color: var(--light);
-  line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
-h2 {
-  font-size: 30px;
-  color: var(--secondary);
+.up-bar {
+    width: 100%;
+    height: 48px;
+    background-color: #1f1f1f;
 }
 
-/*Consistent section padding for all sections in the website */
-
-/* Header */
-.site-header {
-
-  background-color: rgba(255, 255, 255, 0.04);
-  position: sticky;
-  top: 0;
-  z-index: 5;
+.logo {
+    color: #0056d2;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-
-.logo span {
-  color: var(--secondary);
+.nav-link {
+    color: #373a3c;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
 }
 
-
-
-
-
-/* button */
-.custom-btn {
-  background-color: var(--accent);
-  color: white;
+.nav-link:hover {
+    color: #0056d2;
 }
 
-.custom-btn:hover {
-  transform: scale(1.05);
-  /* grows slightly on hover */
+.search-wrapper {
+    max-width: 500px;
 }
 
-/* ANIMATION with @keyframes */
-/* @keyframes defines the stages of a movement.
-We then attach it to an element with the animation property */
-
-/* movement A: a flow float, up and down forever */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-25px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+.search-input {
+    height: 48px;
+    border: 1px solid #a5a5a5 !important;
+    padding-right: 60px !important;
 }
 
-/* Movement B: face in and rise, played once on load */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.search-input:focus {
+    box-shadow: none;
+    border-color: #0056d2 !important;
 }
 
-/* movement C: slow spin, used for the planets */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.search-btn {
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    background-color: #0056d2 !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* HERO section */
-.hero {
-  position: relative;
-
-  padding: 100px var(--p-3);
-  overflow: hidden;
-  background: radial-gradient(circle at top, #1a1a3a, var(--dark));
+.search-btn:hover {
+    background-color: #00419e !important;
 }
 
-.orb {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--primary);
-  filter: blur(4px);
-  opacity: 0.6;
-  animation: float 4s ease-in-out infinite;
-  /*infinite means runs forever*/
+.login-link {
+    color: #0056d2;
 }
 
-/* The text fades up once when the page loads */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  animation: fadeInUp 1s ease both;
+.login-link:hover {
+    text-decoration: underline !important;
 }
 
-.hero-content h1 {
-  font-size: 42px;
-  margin-bottom: var(--m-2);
+.join-btn {
+    color: #0056d2 !important;
+    background-color: #e5f0ff !important;
+    border: 1px solid #0056d2 !important;
+    border-radius: 4px;
+    padding: 8px 16px;
 }
 
-.hero-content p {
-  margin-bottom: var(--m-3);
-  color: #c9c9e0;
+.join-btn:hover {
+    background-color: #cce0ff !important;
 }
 
-/* CSS GRID: this is the main topic of this website
-Display: grid -> turns an element into a grid container, its DIRECT children become grid items that snap into the rows and columns.
-
-There are two key tools
-- grid-template-columns: set the columns of the grid
-- gap:                   set the space between the grid items
-the repeat() + minmax() combo below makes it responsive without using media queries: it will fit as many columns as fit, each at least 200px, sharing the leftover space equally (1fr)
-*/
-
-.planet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--m-3);
-  max-width: 1100px;
-  margin: 0 auto;
+.card-adv {
+    border-radius: 20px !important;
 }
 
-.planet-card {
-  background-color: rgba(42, 39, 39, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  transition:
-    transform 0.25s,
-    border-color 0.25s;
+.crad-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.course-container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.planet-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--secondary);
-  cursor: pointer;
+.category-column {
+    background-color: #f0f4f9;
 }
 
-
-
-.planet-card p {
-  color: #b8b8d0;
-  font-size: 14px;
+.category-link:hover {
+    text-decoration: underline !important;
 }
 
-/* Each planet is a circle, THe spin animation makes the shading rotate slowly so the ball feels alive*/
-.planet {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: spin 9s linear infinite;
+.course-card {
+    transition: box-shadow 0.2s ease-in-out;
+    cursor: pointer;
 }
 
-/* individual planet colors, build with gradients */
-
-.mercury {
-  background: radial-gradient(circle at 30% 30%, #b0b0b0, #6b6b6b);
+.course-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.venus {
-  background: radial-gradient(circle at 30% 30%, #e8c07d, #a5762f);
+.course-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
 }
 
-.earth {
-  background: radial-gradient(circle at 30% 30%, #6ab7ff, #1e6b3a);
+.fs-sm {
+    font-size: 13px;
 }
 
-.mars {
-  background: radial-gradient(circle at 30% 30%, #ff8c66, #6b6b6b);
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.3;
 }
 
-.jupiter {
-  background: radial-gradient(circle at 30% 30%, #e0b088, #9c6b3f);
+.star-icon {
+    font-size: 11px;
 }
 
-.saturn {
-  background: radial-gradient(circle at 30% 30%, #f0d9a0, #b89b5e);
+.field-section {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* 5. BENTO GRID, spanning columns and rows 
-here we define a fixed 4-columns and let some items STRETCH across more than on cell using grid-column and grid-row.
-grid-auto-rows sets a base height for every row.
-*/
-
-.bento {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 120px;
-  gap: var(--p-2);
-  max-width: 1000px;
-  margin: 0 auto;
+.field-card {
+    background: linear-gradient(90deg, #0056d2 0%, #68d37f 100%);
 }
 
-.bento-item {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  display: grid;
-  /* grid also can be used to center content */
-  place-items: center;
-  /* one line to center both axes */
-  padding: var(--p-2);
-  font-weight: 600;
-  color: var(--secondary);
-  transition: background-color 0.3s;
+.fs-sm {
+    font-size: 14px;
 }
 
-.bento-item:hover {
-  background-color: rgba(108, 92, 231, 0.25);
+.fs-xs {
+    font-size: 12px;
 }
 
-/* The feature tile takes a 2x2 block 
-"1/3" ,eams start at line 1, end at line 3
-*/
-.feature {
-  grid-column: 1/3;
-  grid-row: 1/3;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  text-align: center;
+.btn-hover-gray:hover {
+    background-color: #f5f5f5 !important;
 }
 
-.feature h3 {
-  margin-bottom: var(--m-1);
+.course-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
-/* the wide tile spans 2 columns on a single row */
-.wide {
-  grid-column: 3/5;
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
 
 
-.stat {
-  background-color: rgba(255, 255, 255, 0.05);
+
+
+
+
+
+
+.action-card {
+    background: linear-gradient(135deg, #f3f6fa 0%, #f9f4fc 100%);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.stat strong {
-  display: block;
-  font-size: 34px;
-  color: var(--accent);
+.action-card:hover {
+    background: #ffffff;
+    border-color: #d1d7dc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Footer */
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-right: 8px; }
+.icon-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    right: -4px;
+    bottom: -2px;
+    background-color: #f0e6f9; 
+    border-radius: 8px;
+    transform: rotate(-15deg); 
+    z-index: 1;
+}
+
+.icon-wrapper i {
+    position: relative;
+    z-index: 2; 
+    font-size: 32px;
+    color: #0056d2 !important; 
+}
+
+.category-pill {
+    background-color: #ffffff;
+    border-color: #a5a5a5;
+    color: #373a3c;
+}
+
+.category-pill:hover {
+    background-color: #f5f5f5;
+    color: #1f1f1f;
+    border-color: #1f1f1f;
+}
+
+.trending-column {
+    background-color: #f0f4f9;
+}
+
+.trending-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.trending-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fs-sm {
+    font-size: 14px;
+}
+
+.fs-xs {
+    font-size: 12px;
+}
+
+.bg-onboarding {
+    background-color: #f0f4f9;
+}
+
+.onboarding-btn {
+    border: 1px solid #d1d7dc;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.onboarding-btn:hover {
+    border-color: #0056d2;
+    background-color: #f8f9fa !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: #0056d2;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.onboarding-btn .fs-sm {
+    font-size: 15px;
+}
+
+
+.career-card {
+    border: 1px solid #d1d7dc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.career-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.career-img-wrapper {
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.career-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.fs-sm {
+    font-size: 14px;
+}
+
+.testimonial-card {
+    border: 1px solid #d1d7dc;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.fs-sm {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Accordion Specific Styling */
+.faq-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.faq-accordion .accordion-item:first-of-type {
+    border-top: 1px solid #e1e4e8;
+}
+
+.faq-accordion .accordion-button {
+    padding: 1.25rem 0;
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row-reverse; /* Moves the chevron to the left */
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: #1f1f1f;
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button::after {
+    margin-left: 0;
+    background-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .site-footer {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #9a9ac0;
+    background-color: #f5f7f8;
+    border-top: 1px solid #e1e4e8;
 }
 
-/* 
-=================================
-RECAP:
-- Grid container        -> display: grid
-- Defin columns         -> grid-template-columns / repeat/ minmax / fr
-- space items           -> gap
-- span cells            -> grid-column /grid-row
-- center content        -> place-items: center
-- Animate over time     -> keyframes + animation
-- Animate on action     -> transition + :hover
-- Reuse values          -> var(--primary), var(--p-2)
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-=================================
-*/
+.footer-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #373a3c;
+    font-size: 14px;
+    line-height: 2.4;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #0056d2;
+}
+
+.store-badge {
+    height: 40px;
+    width: auto;
+}
+
+.footer-divider {
+    border-color: #d1d7dc;
+    opacity: 1;
+}
+
+.copyright-text {
+    font-size: 13px;
+    color: #373a3c;
+}
+
+.social-link {
+    color: #1f1f1f;
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+.social-link:hover {
+    color: #0056d2;
+}

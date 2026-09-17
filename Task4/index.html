@@ -2,150 +2,811 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid</title>
-
-  <!-- Adding the stylesheet -->
-
-  <head>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursera Header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-
-  </head>
-
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="site-header d-flex justify-content-between align-items-center px-4 py-3">
-    <div class="logo fw-bold fs-5">Space<span>Explorer</span></div>
-    <nav>
-      <ul class="nav d-flex gap-3 list-unstyled mb-0">
-        <li><a href="#planets" class=" text-light text-decoration-none">Planets</a></li>
-        <li><a href="#bento" class="text-light text-decoration-none">Highlights</a></li>
-        <li><a href="#stats" class="text-light text-decoration-none">By the Numbers</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO: the animated intro -->
-    <!-- Floating orb and the floating text using CSS3 Animations, moving it using keyframes -->
-    <section class="hero text-center">
-      <div class="orb"></div>
-      <div class="hero-content">
-        <h1 class="display-5 mb-3">
-          Explore the Solar System</h1>
-        <p>A visual tour of the planets, built to teach CSS Grid</p>
-        <a href="#planets" class="btn custom-btn">Begin the Tour</a>
-      </div>
-    </section>
-
-    <!-- the Planets Section -->
-    <!-- All the list of cars is arranged by Grid.
-        one rule on the container places every card into responsie column,   no floats, no flex hacks -->
-
-    <section id="planets" class="planets py-5">
-      <h2 class="text-center mb-5">The Planets</h2>
-
-      <div class="row g-4 mx-auto">
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet mercury"></div>
-          <h3 class="mt-3 mb-1">Mercury</h3class="mt-3 mb-1">
-          <p>The smallest planet and the closes to the sun</p>
-        </article>
-
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet venus"></div>
-          <h3 class="mt-3 mb-1">Venus</h3>
-          <p>The hottest planet, wrapped in thick clouds</p>
-        </article>
-
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet earth"></div>
-          <h3 class="mt-3 mb-1">Earth</h3>
-          <p>Our home, the only known planet with life</p>
-        </article>
-
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet mars"></div>
-          <h3 class="mt-3 mb-1">Mars</h3>
-          <p>The red planet, a target for future missions</p>
-        </article>
-
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet jupiter"></div>
-          <h3>Jupiter</h3>
-          <p>The largets planet, a giant ball of gas</p>
-        </article>
-
-        <article class="planet-card col-12 col-sm-6 col-lg-4 p-4 text-center">
-          <div class="planet saturn"></div>
-          <h3>Saturn</h3>
-          <p>Famous for its bright, wide ring system.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- BENTO GRID -->
-    <!-- A seond grid that shows Grid's real power -->
-    <!-- item spanning, multiple columns and rows, to build a magazin-style layout -->
-    <section id="bento" class="bento-section">
-      <h2 class="text-center mb-5">Mission Highlights</h2>
-
-      <div class="bento">
-        <!-- This one spans 2 columns and 2 rows, the big feature tile -->
-
-        <div class="bento-item feature">
-          <h3>Deep Space</h3>
-          <p>Telescopes now see galaxies billions of years old</p>
+    <nav class="up-bar"></nav>
+    <header class="site-header d-flex align-items-center justify-content-between px-4 py-3 border-bottom bg-white">
+        <div class="d-flex align-items-center gap-4">
+            <h1 class="logo mb-0">coursera</h1>
+            <div class="nav-link d-flex align-items-center gap-1">
+                Explore <i class="bi bi-chevron-down mt-1" style="font-size: 12px;"></i>
+            </div>
+            <div class="nav-link">Degrees</div>
         </div>
-        <div class="bento-item">Rovers</div>
-        <div class="bento-item">Sattellites</div>
-        <!-- This one will span 2 columns, a wide banner tile on same row -->
-        <div class="bento-item wide">Launhc Systems</div>
-        <div class="bento-item">Stations</div>
-      </div>
-    </section>
+        <div class="search-wrapper position-relative flex-grow-1 mx-4">
+            <input type="text" class="search-input form-control rounded-pill px-4"
+                placeholder="What do you want to learn?">
+            <button class="search-btn btn btn-primary rounded-circle position-absolute top-50 translate-middle-y">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <i class="bi bi-stars text-primary fs-4"></i>
+            <a href="#" class="login-link text-decoration-none fw-bold">Log In</a>
+            <button class="btn join-btn fw-bold">Join for Free</button>
+        </div>
+    </header>
 
-    <!-- STATS: a simple even grid -->
- <section id="stats" class="container py-5">
-  <div class="row g-3">
+    <main>
+        <div class="crad-container container-fluid px-4 py-4">
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <div class="card-adv rounded-4 overflow-hidden h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQeZaccStB4K749w5eb_SC3mlvzx6p8syZIvSpFAW7fA&s=10"
+                            class="w-100 h-100 object-fit-cover d-block" alt="Coursera Plus Discount">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card-adv rounded-4 overflow-hidden h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ7VybS2-OLWsssK5B4L_7tmhdF0emmuHvtH7HrBinIg&s=10"
+                            class="w-100 h-100 object-fit-cover d-block" alt="Learn AI">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="stat col-12 col-sm-6 col-lg-3">
-      <strong>8</strong>
-      <span>Planets</span>
+        <div class="course-container container-fluid px-4 py-5">
+            <h4 class="fw-bold mb-4">New and popular</h4>
+
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <div class="category-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#"
+                            class="category-link text-decoration-none text-dark fw-semibold d-flex align-items-center gap-2 mb-3">
+                            Most popular <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Data Analytics">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Google</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Google Data Analytics</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Professional Certificate</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Foundations">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Google</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Foundations: Data, Data, Everywhere</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Course</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-0 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Python">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">University of Michigan</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Python for Everybody</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="category-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#"
+                            class="category-link text-decoration-none text-dark fw-semibold d-flex align-items-center gap-2 mb-3">
+                            Hot new releases <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Claude AI">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Dr. Ryan Ahmed</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">The Complete Claude Code & Claude...</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Data Analysis">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Microsoft</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Microsoft Data Analysis with SQL, Excel &...</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.6</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-0 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Google AI">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Google</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Google AI</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Professional Certificate</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="category-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#"
+                            class="category-link text-decoration-none text-dark fw-semibold d-flex align-items-center gap-2 mb-3">
+                            Trending AI courses <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Machine Learning">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Multiple educators</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Machine Learning</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-3 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=64&h=64&fit=crop" class="course-img rounded-2" alt="Google AI Essentials">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Google</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">Google AI Essentials</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card bg-white rounded-3 p-2 mb-0 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=64&h=64&fit=crop" class="course-img rounded-2" alt="AI Healthcare">
+                            <div class="course-info flex-grow-1">
+                                <div class="d-flex align-items-center gap-1 text-muted mb-1">
+                                    <span class="fs-sm">Stanford Online</span>
+                                </div>
+                                <h6 class="fw-bold mb-1 text-truncate-2">AI in Healthcare</h6>
+                                <div class="fs-sm text-muted d-flex align-items-center gap-1">
+                                    <span>Specialization</span>
+                                    <span>·</span>
+                                    <span class="text-dark fw-bold d-flex align-items-center gap-1"><i class="bi bi-star-fill star-icon"></i> 4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Field Banner -->
+        <div class="container-fluid px-4 py-5 field-section">
+            <div class="field-card p-4 rounded-4">
+                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2 mb-1 fw-bold fs-5">
+                    AI for the work you do—and the career you want <i class="bi bi-arrow-right"></i>
+                </a>
+                <p class="text-white mb-4 fs-sm">Choose your field. Learn the workflows, judgment and tools reshaping it.</p>
+
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <button class="btn btn-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm">AI Engineer</button>
+                    <button class="btn bg-white text-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm btn-hover-gray">Software Developer</button>
+                    <button class="btn bg-white text-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm btn-hover-gray">Data Analyst</button>
+                    <button class="btn bg-white text-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm btn-hover-gray">Project Manager</button>
+                    <button class="btn bg-white text-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm btn-hover-gray">Business Leader</button>
+                    <button class="btn bg-white text-dark rounded-pill px-3 py-1 fw-semibold border-0 fs-sm btn-hover-gray">Digital Marketer</button>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm course-card">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=200&fit=crop" class="card-img-top object-fit-cover" style="height: 150px;" alt="IBM">
+                            <div class="card-body d-flex flex-column p-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" width="16" height="16" class="rounded-1" alt="">
+                                    <span class="fs-xs text-muted">IBM</span>
+                                </div>
+                                <h6 class="card-title fw-bold mb-4 flex-grow-1">IBM Generative AI Engineering</h6>
+                                <div class="fs-xs text-muted d-flex align-items-center gap-1">
+                                    <i class="bi bi-star-fill text-dark" style="font-size: 10px;"></i> 4.7 (101K) · Professional Certificate
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm course-card">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=200&fit=crop" class="card-img-top object-fit-cover" style="height: 150px;" alt="Vanderbilt">
+                            <div class="card-body d-flex flex-column p-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://ui-avatars.com/api/?name=VU&background=0D1A26&color=fff&size=16" width="16" height="16" class="rounded-1" alt="">
+                                    <span class="fs-xs text-muted">Vanderbilt University</span>
+                                </div>
+                                <h6 class="card-title fw-bold mb-4 flex-grow-1">AI Agents and Agentic AI with Python & Generative AI</h6>
+                                <div class="fs-xs text-muted d-flex align-items-center gap-1">
+                                    <i class="bi bi-star-fill text-dark" style="font-size: 10px;"></i> 4.6 (477) · Course
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm course-card">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=200&fit=crop" class="card-img-top object-fit-cover" style="height: 150px;" alt="DeepLearning">
+                            <div class="card-body d-flex flex-column p-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://ui-avatars.com/api/?name=DL&background=FF6B00&color=fff&size=16" width="16" height="16" class="rounded-1" alt="">
+                                    <span class="fs-xs text-muted">DeepLearning.AI</span>
+                                </div>
+                                <h6 class="card-title fw-bold mb-4 flex-grow-1">Deep Learning</h6>
+                                <div class="fs-xs text-muted d-flex align-items-center gap-1">
+                                    <i class="bi bi-star-fill text-dark" style="font-size: 10px;"></i> 4.8 (147K) · Specialization
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm course-card">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop" class="card-img-top object-fit-cover" style="height: 150px;" alt="Machine Learning">
+                            <div class="card-body d-flex flex-column p-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://ui-avatars.com/api/?name=ME&background=random&size=16" width="16" height="16" class="rounded-1" alt="">
+                                    <span class="fs-xs text-muted">Multiple educators</span>
+                                </div>
+                                <h6 class="card-title fw-bold mb-4 flex-grow-1">Machine Learning</h6>
+                                <div class="fs-xs text-muted d-flex align-items-center gap-1">
+                                    <i class="bi bi-star-fill text-dark" style="font-size: 10px;"></i> 4.9 (39K) · Specialization
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+       <div class="container-fluid px-4 py-5">
+    <div class="row g-4 mb-5">
+        <div class="col-12 col-md-4">
+            <a href="#" class="action-card text-decoration-none text-dark d-flex justify-content-between align-items-center p-4 rounded-4 h-100">
+                <span class="fw-bold fs-5">Launch a new career</span>
+                <div class="icon-wrapper">
+                    <!-- Changed to bi-award to closer match the certificate in your image -->
+                    <i class="bi bi-award text-primary"></i> 
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4">
+            <a href="#" class="action-card text-decoration-none text-dark d-flex justify-content-between align-items-center p-4 rounded-4 h-100">
+                <span class="fw-bold fs-5">Try Coursera for Business</span>
+                <div class="icon-wrapper">
+                    <i class="bi bi-flag text-primary"></i>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4">
+            <a href="#" class="action-card text-decoration-none text-dark d-flex justify-content-between align-items-center p-4 rounded-4 h-100">
+                <span class="fw-bold fs-5">Earn a degree</span>
+                <div class="icon-wrapper">
+                    <i class="bi bi-mortarboard text-primary"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+            <h5 class="fw-bold mb-4">Explore categories</h5>
+            <div class="d-flex flex-wrap gap-2 mb-5">
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-briefcase me-1"></i> Business</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-cpu me-1"></i> Artificial Intelligence</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-bar-chart me-1"></i> Data Science</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-laptop me-1"></i> Computer Science</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-server me-1"></i> Information Technology</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-person-fill-up me-1"></i> Personal Development</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-heart-pulse me-1"></i> Healthcare</button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-1 fs-sm fw-medium category-pill"><i class="bi bi-translate me-1"></i> Language Learning</button>
+            </div>
+
+            <h5 class="fw-bold mb-4">Trending searches</h5>
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <div class="trending-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#" class="text-dark fw-bold text-decoration-none mb-3 d-flex align-items-center gap-1">Python <i class="bi bi-arrow-right fs-sm"></i></a>
+                        
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="Python Analytics">
+                            <div>
+                                <div class="fs-xs text-muted">Google</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">Google Data Analytics with Python</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.7</div>
+                            </div>
+                        </div>
+
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="Python Programming">
+                            <div>
+                                <div class="fs-xs text-muted">University of Michigan</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">Python 3 Programming</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="trending-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#" class="text-dark fw-bold text-decoration-none mb-3 d-flex align-items-center gap-1">Data Analytics <i class="bi bi-arrow-right fs-sm"></i></a>
+                        
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="Excel Skills">
+                            <div>
+                                <div class="fs-xs text-muted">Macquarie University</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">Excel Skills for Business</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.9</div>
+                            </div>
+                        </div>
+
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="Power BI">
+                            <div>
+                                <div class="fs-xs text-muted">Microsoft</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">Microsoft Power BI Data Analyst</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="trending-column p-3 p-xl-4 rounded-4 h-100">
+                        <a href="#" class="text-dark fw-bold text-decoration-none mb-3 d-flex align-items-center gap-1">Project Management <i class="bi bi-arrow-right fs-sm"></i></a>
+                        
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="Project Management">
+                            <div>
+                                <div class="fs-xs text-muted">University of California, Irvine</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">Project Management Principles...</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.7</div>
+                            </div>
+                        </div>
+
+                        <div class="trending-card bg-white rounded-3 p-2 mb-2 d-flex align-items-center gap-3 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=48&h=48&fit=crop" class="rounded-2 object-fit-cover" width="48" height="48" alt="IBM PM">
+                            <div>
+                                <div class="fs-xs text-muted">IBM</div>
+                                <h6 class="fw-bold mb-1 fs-sm text-truncate">IBM Project Manager</h6>
+                                <div class="fs-xs text-muted"><i class="bi bi-star-fill text-dark"></i> 4.8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid px-4 py-5">
+    <div class="bg-onboarding rounded-4 p-4 p-md-5 d-flex flex-column align-items-center justify-content-center">
+        <h5 class="fw-bold mb-4 text-center fs-4">What brings you to Coursera today?</h5>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <button class="btn onboarding-btn bg-white d-flex align-items-center gap-3 p-2 pe-4 shadow-sm">
+                <div class="icon-box rounded-3 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-rocket-takeoff"></i>
+                </div>
+                <span class="fw-semibold text-dark fs-sm">Start my career</span>
+            </button>
+
+            <button class="btn onboarding-btn bg-white d-flex align-items-center gap-3 p-2 pe-4 shadow-sm">
+                <div class="icon-box rounded-3 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-shuffle"></i>
+                </div>
+                <span class="fw-semibold text-dark fs-sm">Change my career</span>
+            </button>
+
+            <button class="btn onboarding-btn bg-white d-flex align-items-center gap-3 p-2 pe-4 shadow-sm">
+                <div class="icon-box rounded-3 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <span class="fw-semibold text-dark fs-sm">Grow in my current role</span>
+            </button>
+
+            <button class="btn onboarding-btn bg-white d-flex align-items-center gap-3 p-2 pe-4 shadow-sm">
+                <div class="icon-box rounded-3 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-binoculars"></i>
+                </div>
+                <span class="fw-semibold text-dark fs-sm">Explore topics outside of work</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid px-4 py-5">
+    <div class="d-flex align-items-baseline gap-3 mb-4">
+        <h4 class="fw-bold mb-0">Explore careers</h4>
+        <a href="#" class="text-decoration-none fw-semibold">Explore all <i class="bi bi-arrow-right"></i></a>
     </div>
 
-    <div class="stat col-12 col-sm-6 col-lg-3">
-      <strong>200+</strong>
-      <span>Moons</span>
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="#" class="card career-card h-100 rounded-4 text-decoration-none text-dark">
+                <div class="career-img-wrapper rounded-top-4" style="background-color: #fff4e5;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" class="card-img-top" alt="Data Scientist">
+                </div>
+                <div class="card-body p-4">
+                    <h6 class="card-title fw-bold mb-2">Data Scientist</h6>
+                    <p class="card-text text-muted fs-sm text-truncate-3 mb-0">A Data Scientist analyzes large datasets to uncover insights, using statistics, machine...</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="#" class="card career-card h-100 rounded-4 text-decoration-none text-dark">
+                <div class="career-img-wrapper rounded-top-4" style="background-color: #fff4e5;">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=250&fit=crop" class="card-img-top" alt="Machine Learning Engineer">
+                </div>
+                <div class="card-body p-4">
+                    <h6 class="card-title fw-bold mb-2">Machine Learning Engineer</h6>
+                    <p class="card-text text-muted fs-sm text-truncate-3 mb-0">A Machine Learning Engineer builds and optimizes algorithms that enable computers t...</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="#" class="card career-card h-100 rounded-4 text-decoration-none text-dark">
+                <div class="career-img-wrapper rounded-top-4" style="background-color: #e8f0fe;">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop" class="card-img-top" alt="Content Creator">
+                </div>
+                <div class="card-body p-4">
+                    <h6 class="card-title fw-bold mb-2">Content Creator</h6>
+                    <p class="card-text text-muted fs-sm text-truncate-3 mb-0">A Content Creator produces a variety of content formats for digital platforms, including articles...</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="#" class="card career-card h-100 rounded-4 text-decoration-none text-dark">
+                <div class="career-img-wrapper rounded-top-4" style="background-color: #fff4e5;">
+                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=250&fit=crop" class="card-img-top" alt="Data Analyst">
+                </div>
+                <div class="card-body p-4">
+                    <h6 class="card-title fw-bold mb-2">Data Analyst</h6>
+                    <p class="card-text text-muted fs-sm text-truncate-3 mb-0">A Data Analyst collects, cleans, and interprets data, using tools like Excel, SQL, and Tableau t...</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid px-4 py-5">
+    <h4 class="fw-bold mb-4">Why people choose Coursera</h4>
+    
+    <div class="row g-4 mb-5">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card testimonial-card h-100 rounded-3">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=48&h=48&fit=crop" class="rounded-circle object-fit-cover" width="48" height="48" alt="Sarah W.">
+                        <span class="fw-bold text-dark">Sarah W.</span>
+                    </div>
+                    <p class="card-text text-dark fs-sm">"Coursera's reputation for high-quality content, paired with its flexible structure, made it possible for me to dive into data analytics while managing family, health, and everyday life."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card testimonial-card h-100 rounded-3">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop" class="rounded-circle object-fit-cover" width="48" height="48" alt="Noeris B.">
+                        <span class="fw-bold text-dark">Noeris B.</span>
+                    </div>
+                    <p class="card-text text-dark fs-sm">"Coursera rebuilt my confidence and showed me I could dream bigger. It wasn't just about gaining knowledge—it was about believing in my potential again."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card testimonial-card h-100 rounded-3">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=48&h=48&fit=crop" class="rounded-circle object-fit-cover" width="48" height="48" alt="Abdullahi M.">
+                        <span class="fw-bold text-dark">Abdullahi M.</span>
+                    </div>
+                    <p class="card-text text-dark fs-sm">"I now feel more prepared to take on leadership roles and have already started mentoring some of my colleagues."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card testimonial-card h-100 rounded-3">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=48&h=48&fit=crop" class="rounded-circle object-fit-cover" width="48" height="48" alt="Anas A.">
+                        <span class="fw-bold text-dark">Anas A.</span>
+                    </div>
+                    <p class="card-text text-dark fs-sm">"Learning with Coursera has expanded my professional expertise by giving me access to cutting-edge research, practical tools, and global perspectives."</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="stat col-12 col-sm-6 col-lg-3">
-      <strong>1</strong>
-      <span>Star</span>
+    <h4 class="fw-bold mb-4 mt-5">Frequently asked questions</h4>
+    
+    <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Is Coursera accredited, and are Coursera certificates recognized by employers?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    Yes, many of our certificates are highly recognized by leading employers and universities.
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Is a Coursera certificate worth it?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    Coursera certificates hold value for career advancement, demonstrating relevant skills to potential employers.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    What is Coursera Plus, and is it worth it?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    Coursera Plus provides unlimited access to over 7,000 courses, hands-on projects, and certificate programs.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Does Coursera offer free online courses?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    Yes, you can audit thousands of courses for free on the platform.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    What are the most popular courses on Coursera?
+                </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    Our most popular courses span fields like AI, Data Science, Business, and Computer Science.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                    How can Coursera help me get a job or advance my career?
+                </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted fs-sm pb-4 pt-0 ps-5">
+                    We offer professional certificates designed by industry leaders like Google and IBM to prepare you for entry-level roles.
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+    </main>
 
-    <div class="stat col-12 col-sm-6 col-lg-3">
-      <strong>4.6B</strong>
-      <span>Years Old</span>
-    </div>
+    <footer class="site-footer pt-5 pb-4">
+        <div class="footer-container px-4">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Skills</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Accounting</a></li>
+                        <li><a href="#" class="footer-link">Artificial Intelligence (AI)</a></li>
+                        <li><a href="#" class="footer-link">Cybersecurity</a></li>
+                        <li><a href="#" class="footer-link">Data Analytics</a></li>
+                        <li><a href="#" class="footer-link">Digital Marketing</a></li>
+                        <li><a href="#" class="footer-link">Human Resources (HR)</a></li>
+                        <li><a href="#" class="footer-link">Microsoft Excel</a></li>
+                        <li><a href="#" class="footer-link">Project Management</a></li>
+                        <li><a href="#" class="footer-link">Python</a></li>
+                        <li><a href="#" class="footer-link">SQL</a></li>
+                    </ul>
+                </div>
 
-  </div>
-</section>
-  </main>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Professional Certificates</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Google AI Certificate</a></li>
+                        <li><a href="#" class="footer-link">Google Cybersecurity Certificate</a></li>
+                        <li><a href="#" class="footer-link">Google Data Analytics Certificate</a></li>
+                        <li><a href="#" class="footer-link">Google IT Support Certificate</a></li>
+                        <li><a href="#" class="footer-link">Google Project Management Certificate</a></li>
+                        <li><a href="#" class="footer-link">Google UX Design Certificate</a></li>
+                        <li><a href="#" class="footer-link">IBM AI Engineering Certificate</a></li>
+                        <li><a href="#" class="footer-link">IBM AI Product Manager Certificate</a></li>
+                        <li><a href="#" class="footer-link">IBM Data Science Certificate</a></li>
+                        <li><a href="#" class="footer-link">Intuit Academy Bookkeeping Certificate</a></li>
+                    </ul>
+                </div>
 
-  <footer class="site-footer text-center p-4"">
-    <p>Spaec Explorer, a CSS training demo</p>
-    <p>&copy; 2026</p>
-  </footer>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Courses & Specializations</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">AI Essentials Specialization</a></li>
+                        <li><a href="#" class="footer-link">AI For Business Specialization</a></li>
+                        <li><a href="#" class="footer-link">AI For Everyone Course</a></li>
+                        <li><a href="#" class="footer-link">AI in Healthcare Specialization</a></li>
+                        <li><a href="#" class="footer-link">Deep Learning Specialization</a></li>
+                        <li><a href="#" class="footer-link">Excel Skills for Business Specialization</a></li>
+                        <li><a href="#" class="footer-link">Financial Markets Course</a></li>
+                        <li><a href="#" class="footer-link">Machine Learning Specialization</a></li>
+                        <li><a href="#" class="footer-link">Prompt Engineering for ChatGPT Course</a></li>
+                        <li><a href="#" class="footer-link">Python for Everybody Specialization</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Career Resources</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Career Aptitude Test</a></li>
+                        <li><a href="#" class="footer-link">CAPM Certification Requirements</a></li>
+                        <li><a href="#" class="footer-link">CompTIA A+ Certification Requirements</a></li>
+                        <li><a href="#" class="footer-link">CompTIA Security+ Certification Requirements</a></li>
+                        <li><a href="#" class="footer-link">Essential IT Certifications</a></li>
+                        <li><a href="#" class="footer-link">High-Income Skills to Learn</a></li>
+                        <li><a href="#" class="footer-link">How to Learn Artificial Intelligence</a></li>
+                        <li><a href="#" class="footer-link">PMP Certification Requirements</a></li>
+                        <li><a href="#" class="footer-link">Popular Cybersecurity Certifications</a></li>
+                        <li><a href="#" class="footer-link">Share your Coursera learning story</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Coursera</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">What We Offer</a></li>
+                        <li><a href="#" class="footer-link">Leadership</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Catalog</a></li>
+                        <li><a href="#" class="footer-link">Coursera Plus</a></li>
+                        <li><a href="#" class="footer-link">Professional Certificates</a></li>
+                        <li><a href="#" class="footer-link">MasterTrack® Certificates</a></li>
+                        <li><a href="#" class="footer-link">Degrees</a></li>
+                        <li><a href="#" class="footer-link">For Enterprise</a></li>
+                        <li><a href="#" class="footer-link">For Government</a></li>
+                        <li><a href="#" class="footer-link">For Campus</a></li>
+                        <li><a href="#" class="footer-link">Become a Partner</a></li>
+                        <li><a href="#" class="footer-link">Social Impact</a></li>
+                        <li><a href="#" class="footer-link">Free Courses</a></li>
+                        <li><a href="#" class="footer-link">Udemy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">Community</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Learners</a></li>
+                        <li><a href="#" class="footer-link">Partners</a></li>
+                        <li><a href="#" class="footer-link">Beta Testers</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">The Coursera Podcast</a></li>
+                        <li><a href="#" class="footer-link">Tech Blog</a></li>
+                    </ul>
+                </div>
 
 
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h6 class="footer-heading mb-3">More</h6>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                        <li><a href="#" class="footer-link">Terms</a></li>
+                        <li><a href="#" class="footer-link">Privacy</a></li>
+                        <li><a href="#" class="footer-link">Help</a></li>
+                        <li><a href="#" class="footer-link">Accessibility</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Articles</a></li>
+                        <li><a href="#" class="footer-link">Directory</a></li>
+                        <li><a href="#" class="footer-link">Affiliates</a></li>
+                        <li><a href="#" class="footer-link">Modern Slavery Statement</a></li>
+                        <li><a href="#" class="footer-link">Cookies Preference Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-3 pt-4">
+                    <a href="#"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                            alt="Download on the App Store" class="store-badge"></a>
+                    <a href="#"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Get it on Google Play" class="store-badge"></a>
+                </div>
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="copyright-text mb-3 mb-md-0">
+                    © 2026 Coursera Inc. All rights reserved.
+                </div>
+
+                <div class="social-icons d-flex gap-3">
+                    <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-
-</html>
+</html> 
